@@ -21,6 +21,7 @@ class Wiki extends Component {
     componentDidMount(){
       this.getData()
     }
+    //Method calls API retrivies and stores data in state
     getData(){
       console.log('Before fetch')
         fetch(apiUrl(this.props.query))
@@ -47,7 +48,9 @@ class Wiki extends Component {
         })
     }
     render(){
+        //Returns "Request Failed" if api fails to connect 
         if(this.state.requestFailed) return <h1>Request Failed</h1>
+        //Shows a loading message while API call is executing
         if(!this.state.title) return <h2>Loading</h2>
         return (
             <div>
@@ -66,6 +69,8 @@ class Wiki extends Component {
         )
     }
 }
+
+// A single listing view
 function ListItem(props) {
   return(
       <li>
