@@ -33,7 +33,7 @@ class Wiki extends Component {
             this.setState({
                 wikiData: data
             })
-          console.log(data[1])
+          console.log(data)
         }, ()=>{
           this.setState({
             requestFailed: true
@@ -68,20 +68,6 @@ class Wiki extends Component {
 }
 function ListItem(props) {
   return <li>{props.value}</li>;
-}
-
-function description(props){
-  const descriptions = props.name;
-  const descriptionList = descriptions.map((description, index) => 
-          <ListItem key={index} 
-                    value={description}/> 
-        );
-  return(
-          <ul>
-              {descriptionList}
-          </ul>                          
-    );
-  
 }
 
 export default Wiki;
