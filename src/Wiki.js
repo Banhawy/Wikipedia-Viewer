@@ -46,15 +46,6 @@ class Wiki extends Component {
           })
         })
     }
-    getList(array){
-        const titleArray = this.state.wikiData[1]
-        console.log(titleArray)
-        const descriptionArray = this.state.wikiData[2]
-        const linksArray = this.state.wikiData[3]
-        return(
-          <ul>{descriptionArray}</ul>                          
-        )
-    }
     render(){
         if(this.state.requestFailed) return <h1>Request Failed</h1>
         if(!this.state.title) return <h2>Loading</h2>
