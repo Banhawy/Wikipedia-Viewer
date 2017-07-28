@@ -11,7 +11,10 @@ class Wiki extends Component {
       this.state = {
         wikiData: undefined,
         requestFailed: false,
-        suggestions: []
+        suggestions: [],
+        title: null,
+        description: [],
+        links: []
       }
       console.log('Insiide Constructor')
     }
@@ -31,7 +34,10 @@ class Wiki extends Component {
         .then(data => data.json())
         .then(data => {
             this.setState({
-                wikiData: data
+                suggestions: data[1],
+                title: data[0],
+                description: data[2],
+                links: data[3]
             })
           console.log(data)
         }, ()=>{
@@ -41,25 +47,28 @@ class Wiki extends Component {
         })
     }
     getList(array){
-        const descriptionList = array.map((description) => 
-          <li>{description}</li> 
-        )
+        const titleArray = this.state.wikiData[1]
+        console.log(titleArray)
+        const descriptionArray = this.state.wikiData[2]
+        const linksArray = this.state.wikiData[3]
         return(
-          <ul>{descriptionList}</ul>                          
+          <ul>{descriptionArray}</ul>                          
         )
     }
     render(){
         if(this.state.requestFailed) return <h1>Request Failed</h1>
-        if(!this.state.wikiData) return <h2>Loading</h2>
+        if(!this.state.title) return <h2>Loading</h2>
         return (
             <div>
                 <h1>Something happened</h1>
-            <h2>It's {this.state.wikiData[0]}</h2>
-            <description name={this.state.wikiData[1]} />
+            <h2>It's {this.state.title}</h2>
+            <description name={this.state.title} />
             <ul>
-                {this.state.wikiData[1].map((description, index) =>
-                    <ListItem key={index} 
-                              value={description}/>
+                {this.state.description.map((item, index) =>
+                    <ListItem key={index}
+                                title={this.state.suggestions[index]}
+                                description={item}
+                                url={this.state.links[index]}/>
                 )}
             </ul>
             </div>
@@ -67,7 +76,14 @@ class Wiki extends Component {
     }
 }
 function ListItem(props) {
-  return <li>{props.value}</li>;
+  return(
+      <li>
+          <a href={props.url} target="_blank">
+          <h2>{props.title}</h2>
+          <p>{props.description}</p>
+          </a>
+      </li>
+  ) 
 }
 
 export default Wiki;
