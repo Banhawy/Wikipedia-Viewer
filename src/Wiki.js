@@ -54,9 +54,6 @@ class Wiki extends Component {
         if(!this.state.title) return <h2>Loading</h2>
         return (
             <div>
-                <h1>Something happened</h1>
-            <h2>It's {this.state.title}</h2>
-            <description name={this.state.title} />
             <ul>
                 {this.state.description.map((item, index) =>
                     <ListItem key={index}
