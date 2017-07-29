@@ -74,7 +74,7 @@ class Wiki extends Component {
                 </form>
                 <ul>
                     {
-                    (this.state.query == this.state.title) ? this.state.description.map((item, index) =>
+                    (this.state.query === this.state.title) ? this.state.description.map((item, index) =>
                         {return (
                                 <ListItem key={index}
                                         title={this.state.suggestions[index]}
