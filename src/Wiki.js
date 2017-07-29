@@ -16,11 +16,23 @@ class Wiki extends Component {
         description: [],
         links: []
       }
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
       console.log('Insiide Constructor')
     }
-    componentDidMount(){
-      this.getData()
+    handleChange(event){
+        event.preventDefault();
+        this.setState({
+            query: event.target.value
+        });
     }
+    handleSubmit(event){
+        console.log('hi');
+        let query =  this.state.query;
+        query ? this.getData(query) : false;
+        event.preventDefault();
+
+    } 
     //Method calls API retrivies and stores data in state
     getData(){
       console.log('Before fetch')
@@ -52,6 +64,7 @@ class Wiki extends Component {
         if(this.state.requestFailed) return <h1>Request Failed</h1>
         //Shows a loading message while API call is executing
         if(!this.state.title) return <h2>Loading</h2>
+        if(this.state.title !== undefined) return <h1>BOO</h1>
         return (
             <div>
             <ul>
