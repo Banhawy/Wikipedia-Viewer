@@ -9,6 +9,7 @@ class Wiki extends Component {
     constructor(props){
         super(props);
       this.state = {
+        query: '',
         wikiData: undefined,
         requestFailed: false,
         suggestions: [],
@@ -36,7 +37,7 @@ class Wiki extends Component {
     //Method calls API retrivies and stores data in state
     getData(){
       console.log('Before fetch')
-        fetch(apiUrl(this.props.query))
+        fetch(apiUrl(this.state.query))
         .then(console.log('fetch successful'))
         .then(response => {
             if(!response.ok){
@@ -62,19 +63,26 @@ class Wiki extends Component {
     render(){
         //Returns "Request Failed" if api fails to connect 
         if(this.state.requestFailed) return <h1>Request Failed</h1>
-        //Shows a loading message while API call is executing
-        if(!this.state.title) return <h2>Loading</h2>
-        if(this.state.title !== undefined) return <h1>BOO</h1>
         return (
             <div>
-            <ul>
-                {this.state.description.map((item, index) =>
-                    <ListItem key={index}
-                                title={this.state.suggestions[index]}
-                                description={item}
-                                url={this.state.links[index]}/>
-                )}
-            </ul>
+                <form onSubmit={this.handleSubmit}>
+                    <input placeholder="Search Wikipedia"
+                            value={this.state.query}
+                            onChange={this.handleChange}
+                            ></input>
+                            <input type="submit" value="Submit" />
+                </form>
+                <ul>
+                    {
+                    (this.state.query == this.state.title) ? this.state.description.map((item, index) =>
+                        {return (
+                                <ListItem key={index}
+                                        title={this.state.suggestions[index]}
+                                        description={item}
+                                        url={this.state.links[index]}/>)}
+                    ) : null
+                }
+                </ul>
             </div>
         )
     }
