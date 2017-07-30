@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import FontIcon from 'material-ui/FontIcon';
+import FontAwesome from 'react-fontawesome';
 
 import wiki_logo from './wiki_logo.png';
 import Wiki from './Wiki';
@@ -22,7 +23,7 @@ class App extends Component {
       href="https://github.com/callemall/material-ui"
       target="_blank"
       secondary={true}
-      icon={<FontIcon className="muidocs-icon-custom-github" />}
+      icon={<FontAwesome name="medium" />}
       style={style}
     />
           <img src={wiki_logo} className="App-logo" alt="logo" />
