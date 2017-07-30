@@ -70,7 +70,6 @@ class Wiki extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <TextField
                     className="ui-form"
-                    hintText="Search"
                     floatingLabelText="Search Wikipedia"
                     value={this.state.query}
                     onChange={this.handleChange}
