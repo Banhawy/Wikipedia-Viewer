@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 import wiki_logo from './wiki_logo.png';
 import Wiki from './Wiki';
 import './App.css';
