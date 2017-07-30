@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 import wiki_logo from './wiki_logo.png';
 import Wiki from './Wiki';
 import './App.css';
@@ -10,6 +9,7 @@ class App extends Component {
 
   render() {
     return (
+      <MuiThemeProvider>
       <div className="App">
         <div className="App-header">
           <img src={wiki_logo} className="App-logo" alt="logo" />
@@ -17,6 +17,7 @@ class App extends Component {
         </div>
         <Wiki></Wiki>
       </div>
+      </MuiThemeProvider>
     );
   }
 }
