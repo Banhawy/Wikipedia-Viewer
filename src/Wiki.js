@@ -65,10 +65,11 @@ class Wiki extends Component {
         //Returns "Request Failed" if api fails to connect
         if(this.state.requestFailed) return <h1>Request Failed</h1>
         return (
-
+          <div>
             <div className="container">
                 <form onSubmit={this.handleSubmit}>
                     <TextField
+                    className="ui-form"
                     hintText="Search"
                     floatingLabelText="Search Wikipedia"
                     value={this.state.query}
@@ -76,8 +77,8 @@ class Wiki extends Component {
                     />
                             <input type="submit" value="Submit" />
                 </form>
-
-
+            </div>
+            <div className="listings">
                 <ul>
                     {
                     (this.state.query === this.state.title) ? this.state.description.map((item, index) =>
@@ -90,6 +91,8 @@ class Wiki extends Component {
                 }
                 </ul>
                 </div>
+                </div>
+
 
 
         )
