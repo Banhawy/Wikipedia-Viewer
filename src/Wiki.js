@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import TextField from 'material-ui/TextField';
 
 const apiUrl = query => 
 `https://crossorigin.me/https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=${query}`
@@ -64,14 +66,19 @@ class Wiki extends Component {
         //Returns "Request Failed" if api fails to connect 
         if(this.state.requestFailed) return <h1>Request Failed</h1>
         return (
-            <div>
+            <MuiThemeProvider>
+            <div className="container">
                 <form onSubmit={this.handleSubmit}>
-                    <input placeholder="Search Wikipedia"
-                            value={this.state.query}
-                            onChange={this.handleChange}
-                            ></input>
+                    <TextField
+                    hintText="Search"
+                    floatingLabelText="Search Wikipedia"
+                    value={this.state.query}
+                    onChange={this.handleChange}
+                    />
                             <input type="submit" value="Submit" />
                 </form>
+            </div>
+                
                 <ul>
                     {
                     (this.state.query === this.state.title) ? this.state.description.map((item, index) =>
@@ -83,7 +90,8 @@ class Wiki extends Component {
                     ) : null
                 }
                 </ul>
-            </div>
+                </MuiThemeProvider>
+            
         )
     }
 }
