@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import RaisedButton from 'material-ui/RaisedButton';
 import FontIcon from 'material-ui/FontIcon';
 import {grey500, grey50, grey300} from 'material-ui/styles/colors';
 import FlatButton from 'material-ui/FlatButton';
@@ -23,6 +22,7 @@ const githubButton = <FlatButton
                       icon={githubIcon}
                       style={style}
                       />
+
 class App extends Component {
 
   render() {
