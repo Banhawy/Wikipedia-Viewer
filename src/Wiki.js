@@ -3,6 +3,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import FontIcon from 'material-ui/FontIcon';
 import {grey500} from 'material-ui/styles/colors';
+import FontAwesome from 'react-fontawesome';
 
 const apiUrl = query =>
 `https://crossorigin.me/https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=${query}`
@@ -17,10 +18,10 @@ const style = {
   },
 };
 
-const wikiIcon = <FontIcon className="fa fa-wikipedia-w fa-1" />;
+const wikiIcon = <FontAwesome  name="wikipedia-w"/>;
 const submitButton = <RaisedButton
                       label="Search"
-                      labelPosition="after"
+                      labelPosition="before"
                       icon={wikiIcon}
                       style={style}
                       value="Submit"

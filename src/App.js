@@ -3,6 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import FontIcon from 'material-ui/FontIcon';
 import {grey500, grey50, grey300} from 'material-ui/styles/colors';
 import FlatButton from 'material-ui/FlatButton';
+import FontAwesome from 'react-fontawesome';
 
 import wiki_logo from './wiki_logo.png';
 import Wiki from './Wiki';
@@ -13,7 +14,7 @@ const style = {
   float: 'right'
 };
 const name = " Adham El Banhawy"
-const githubIcon = <FontIcon className="fa fa-github" />;
+const githubIcon = <FontAwesome  name="github" size="2x"/>;
 const githubButton = <FlatButton
                       backgroundColor={grey300}
                       hoverColor={grey500}
