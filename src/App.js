@@ -32,7 +32,7 @@ class App extends Component {
         <div className="App-header">
           <img src={wiki_logo} className="App-logo" alt="logo" />
           {githubButton}
-          <h2>Welcome to Wiki Viewer</h2>
+          <h2>Wikipedia Viewer in ReactJs</h2>
         </div>
         <Wiki></Wiki>
       </div>
