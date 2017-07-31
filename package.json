@@ -23,7 +23,7 @@
     "deploy": "gh-pages -d build"
   },
   "proxy": "http://localhost:3001/",
-  "homepage" : "http://banhawy.github.io/Wikipedia-Viewer/public",
+  "homepage" : ".",
   "devDependencies": {
     "npm-run-all": "^4.0.2"
   }
