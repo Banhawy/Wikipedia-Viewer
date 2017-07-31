@@ -21,6 +21,7 @@
     "eject": "react-scripts eject"
   },
   "proxy": "http://localhost:3001/",
+  "homepage" : "http://banhawy.github.io/Wikipedia-Viewer"
   "devDependencies": {
     "npm-run-all": "^4.0.2"
   }
