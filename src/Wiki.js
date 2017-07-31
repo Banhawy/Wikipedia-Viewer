@@ -5,7 +5,7 @@ import FontIcon from 'material-ui/FontIcon';
 import {grey500} from 'material-ui/styles/colors';
 
 const apiUrl = query =>
-`https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=${query}`
+`https://crossorigin.me/https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=${query}`
 
 const style = {
   margin: 12,
