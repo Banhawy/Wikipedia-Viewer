@@ -24,12 +24,21 @@ body {
   to {
     transform: rotate(360deg); } }
 
-.container {
+.container form {
   background-color: white;
-  height: 7em;
+  height: 8em;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
   -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08); }
+  .container form p {
+    opacity: 0.6;
+    transition: opacity .5s linear; }
+    .container form p a {
+      text-decoration: none; }
+      .container form p a:hover {
+        font-weight: bold; }
+      .container form p a:visited {
+        color: black; }
 
 .listings li {
   list-style-type: none;

@@ -31,11 +31,27 @@ body {
 }
 
 .container {
-  background-color: white;
-  height: 7em;
-  -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
--moz-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+
+  form{
+    background-color: white;
+    height: 8em;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  -moz-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  p {
+    opacity: 0.6;
+    transition: opacity .5s linear;
+    a{
+      text-decoration: none;
+      &:hover{
+        font-weight: bold;
+      }
+      &:visited {
+        color: black;
+      }
+    }
+  }
+  }
 }
 
 .listings {

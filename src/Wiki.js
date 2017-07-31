@@ -1,9 +1,31 @@
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
+import FontIcon from 'material-ui/FontIcon';
+import {grey500} from 'material-ui/styles/colors';
 
 const apiUrl = query =>
 `https://crossorigin.me/https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=${query}`
 
+const style = {
+  margin: 12,
+  floatingLabelStyle: {
+    color: grey500
+  },
+  underlineStyle: {
+    borderColor: grey500,
+  },
+};
+
+const wikiIcon = <FontIcon className="fa fa-wikipedia-w fa-1" />;
+const submitButton = <RaisedButton
+                      label="Search"
+                      labelPosition="after"
+                      icon={wikiIcon}
+                      style={style}
+                      value="Submit"
+                      type="Submit"
+                      />
 
 
 class Wiki extends Component {
@@ -73,8 +95,15 @@ class Wiki extends Component {
                     floatingLabelText="Search Wikipedia"
                     value={this.state.query}
                     onChange={this.handleChange}
+                    loatingLabelStyle={style.floatingLabelStyle}
+                    underlineFocusStyle={style.underlineStyle}
                     />
-                            <input type="submit" value="Submit" />
+                            {submitButton}
+                  <p>
+                    <a href="https://en.wikipedia.org/wiki/Special:Random" rel="noopener noreferrer" target="_blank">
+                    Get random article
+                    </a>
+                  </p>
                 </form>
             </div>
             <div className="listings">
