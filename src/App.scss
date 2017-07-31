@@ -16,9 +16,31 @@ body {
 
 .App-header {
   background-color: $grey;
-  height: 150px;
+  height: 160px;
   padding: 20px;
   color: white;
+  .github-button{
+    @media screen and (max-width: 455px){
+      display: none;
+    }
+  }
+  h2 {
+    font-family: serif;
+  }
+  p {
+    font-size: small;
+    font-family: cursive;
+    a{
+      text-decoration: none;
+      font-family: 'Dancing Script', cursive;
+      &:hover{
+        font-weight: bolder;
+      }
+      &:visited {
+        color: white;
+      }
+    }
+  }
 }
 
 .App-intro {
