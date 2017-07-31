@@ -4,6 +4,7 @@ import FontIcon from 'material-ui/FontIcon';
 import {grey500, grey50, grey300} from 'material-ui/styles/colors';
 import FlatButton from 'material-ui/FlatButton';
 import FontAwesome from 'react-fontawesome';
+import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 
 import wiki_logo from './wiki_logo.png';
 import Wiki from './Wiki';

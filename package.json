@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "material-ui": "^0.18.7",
     "node-sass-chokidar": "0.0.3",
     "react": "^15.6.1",
@@ -23,7 +24,7 @@
     "deploy": "gh-pages -d build"
   },
   "proxy": "http://localhost:3001/",
-  "homepage" : ".",
+  "homepage": "http://banhawy.github.io/Wikipedia-Viewer",
   "devDependencies": {
     "npm-run-all": "^4.0.2"
   }
