@@ -12,15 +12,16 @@ const style = {
   margin: 12,
   float: 'right'
 };
-
+const name = " Adham El Banhawy"
 const githubIcon = <FontIcon className="fa fa-github" />;
 const githubButton = <FlatButton
                       backgroundColor={grey300}
                       hoverColor={grey500}
-                      href="https://github.com/callemall/material-ui"
+                      href="https://github.com/Banhawy/Wikipedia-Viewer"
                       target="_blank"
                       icon={githubIcon}
                       style={style}
+                      className="github-button"
                       />
 
 class App extends Component {
@@ -32,7 +33,12 @@ class App extends Component {
         <div className="App-header">
           <img src={wiki_logo} className="App-logo" alt="logo" />
           {githubButton}
-          <h2>Wikipedia Viewer in ReactJs</h2>
+          <h2>Wikipedia Viewer</h2>
+          <p>Built with React by
+              <a href="https://banhawy.github.io/cv/index.html" rel="noopener noreferrer" target="_blank">
+               {name}
+              </a>
+          </p>
         </div>
         <Wiki></Wiki>
       </div>
