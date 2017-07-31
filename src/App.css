@@ -6,7 +6,8 @@ body {
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px; }
+  height: 80px;
+  margin-right: -7em; }
 
 .App-header {
   background-color: #424242;
