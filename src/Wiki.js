@@ -6,7 +6,7 @@ import {grey500} from 'material-ui/styles/colors';
 import FontAwesome from 'react-fontawesome';
 
 const apiUrl = query =>
-`https://crossorigin.me/https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=${query}`
+`https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=${query}`
 
 const style = {
   margin: 12,
