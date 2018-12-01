@@ -14,7 +14,7 @@ body {
   margin-right: -7em; }
 
 .App-header {
-  background-color: #424242;
+  background-image: radial-gradient(circle farthest-corner at -4% -12.9%, #4a626e 0.3%, #1e2130 90.2%);
   height: 160px;
   padding: 20px;
   color: white; }
