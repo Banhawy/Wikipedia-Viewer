@@ -37,7 +37,7 @@ class App extends Component {
           {githubButton}
           <h2>Wikipedia Viewer</h2>
           <p>Built with React by
-              <a href="https://banhawy.github.io/cv/index.html" rel="noopener noreferrer" target="_blank">
+              <a href="https://elbanhawy.com" rel="noopener noreferrer" target="_blank">
                {name}
               </a>
           </p>
