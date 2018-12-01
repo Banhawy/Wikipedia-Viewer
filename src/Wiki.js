@@ -7,7 +7,7 @@ import FontAwesome from 'react-fontawesome';
 import Loader from 'halogen/RingLoader'
 
 const apiUrl = query =>
-`https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=${query}`
+`https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=${query}&origin=*`
 
 const style = {
   margin: 12,
@@ -67,7 +67,14 @@ class Wiki extends Component {
     //Method calls API retrivies and stores data in state
     getData(){
       console.log('Before fetch')
-        fetch(apiUrl(this.state.query))
+        fetch(apiUrl(this.state.query),
+          {
+            headers: new Headers({
+            'content-type': 'application/json',
+            'Access-Control-Allow-Origin': "*",
+            })
+          }
+        )
         // .then(console.log('fetch successful'))
         .then(response => {
             if(!response.ok){
