@@ -31,8 +31,9 @@ body {
     font-size: small;
     font-family: cursive;
     a{
-      text-decoration: none;
+      // text-decoration: none;
       font-family: 'Dancing Script', cursive;
+      color: white;
       &:hover{
         font-weight: bolder;
       }

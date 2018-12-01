@@ -23,8 +23,8 @@ body {
     font-size: small;
     font-family: cursive; }
     .App-header p a {
-      text-decoration: none;
-      font-family: 'Dancing Script', cursive; }
+      font-family: 'Dancing Script', cursive;
+      color: white; }
       .App-header p a:hover {
         font-weight: bolder; }
       .App-header p a:visited {
