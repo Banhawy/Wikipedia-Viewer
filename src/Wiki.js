@@ -4,6 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FontIcon from 'material-ui/FontIcon';
 import {grey500} from 'material-ui/styles/colors';
 import FontAwesome from 'react-fontawesome';
+import Loader from 'halogen/RingLoader'
 
 const apiUrl = query =>
 `https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=${query}`
@@ -93,7 +94,7 @@ class Wiki extends Component {
     render(){
         //Returns "Request Failed" if api fails to connect
         if(this.state.requestFailed) return <h1>Request Failed</h1>
-        if(this.state.fetchingData) return <h2>Loading...</h2>
+        if(this.state.fetchingData) return <div id="loader"><Loader color="black" size="300px" margin="auto"/></div>
         return (
           <div>
             <div className="container">

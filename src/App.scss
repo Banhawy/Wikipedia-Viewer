@@ -6,6 +6,12 @@ body {
 }
 .App {
   text-align: center;
+  div#loader {
+    margin : 5rem;
+    div div{
+      margin: auto
+    }
+  }
 }
 
 .App-logo {

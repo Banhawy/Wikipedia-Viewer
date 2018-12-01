@@ -3,6 +3,10 @@ body {
 
 .App {
   text-align: center; }
+  .App div#loader {
+    margin: 5rem; }
+    .App div#loader div div {
+      margin: auto; }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
