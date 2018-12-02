@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import FontIcon from 'material-ui/FontIcon';
-import {grey500, grey50, grey300} from 'material-ui/styles/colors';
+import {grey500, grey300} from 'material-ui/styles/colors';
 import FlatButton from 'material-ui/FlatButton';
 import FontAwesome from 'react-fontawesome';
 
