@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import FontIcon from 'material-ui/FontIcon';
 import {grey500} from 'material-ui/styles/colors';
 import FontAwesome from 'react-fontawesome';
-import Loader from 'halogen/RingLoader'
+import Loader from 'halogen/RingLoader';
+import $ from 'jquery';
 
 const apiUrl = query =>
 `https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=${query}&origin=*`
@@ -56,47 +56,39 @@ class Wiki extends Component {
     handleSubmit(event){
         console.log('hi');
         let query =  this.state.query;
-        let state = this.state;
         this.setState({
           fetchingData: true
         })
-        query ? this.getData(query) : false;
+        if (query) this.getData(query)
         event.preventDefault();
 
     }
     //Method calls API retrivies and stores data in state
     getData(){
-      console.log('Before fetch')
-        fetch(apiUrl(this.state.query),
-          {
-            headers: new Headers({
-            'content-type': 'application/json',
-            'Access-Control-Allow-Origin': "*",
+        $.ajax(apiUrl(this.state.query), {
+          dataType: "json",
+          data: {
+            origin: "*"
+          },
+          type: "GET",
+          success: (data) => {
+            console.log(data);
+            this.setState({
+                      suggestions: data[1],
+                      title: data[0],
+                      description: data[2],
+                      links: data[3],
+                      fetchingData: false
+                  })
+          },
+          error: error => {
+            console.log(error)
+            this.setState({
+              requestFailed: true,
+              fetchingData: false
             })
           }
-        )
-        // .then(console.log('fetch successful'))
-        .then(response => {
-            if(!response.ok){
-                throw Error("msh sha3'ala!")
-            }
-            return response
-        })
-        .then(data => data.json())
-        .then(data => {
-            this.setState({
-                suggestions: data[1],
-                title: data[0],
-                description: data[2],
-                links: data[3],
-                fetchingData: false
-            })
-          console.log(data)
-        }, ()=>{
-          this.setState({
-            requestFailed: true
-          })
-        })
+        });
     }
     render(){
         //Returns "Request Failed" if api fails to connect
